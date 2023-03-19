@@ -25,11 +25,24 @@ def sift_down(data,i):
     return swaps
 
 def main():
-    n = int(input())
-    data = list(map(int, input().split()))
+    text = input()
+    n=0
+    if text[0]=="I":
+        n = int(input())
+        data = list(map(int, input().split()))
+    elif text[0]=="F":
+        filename = "tests/"
+        filename = filename + input()
+        if filename[-1] == 'a':
+            return
+        with opem(filename, 'r') as file:
+            text = file.read()
+            lines = text.split('\n')
+            n = int(lines[0])
+            data = list(map(int, input().split()))
     assert len(data) == n
     swaps = build_heap(data)
-    assert len(swaps) <= 4*n
+    #assert len(swaps) <= 4*n
     print(len(swaps))
     for i, j in swaps:
         print(i, j)
