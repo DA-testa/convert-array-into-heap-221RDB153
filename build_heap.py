@@ -35,7 +35,7 @@ def main():
         filename = filename + input()
         if filename[-1] == 'a':
             return
-        with opem(filename, 'r') as file:
+        with open(filename, 'r') as file:
             text = file.read()
             lines = text.split('\n')
             n = int(lines[0])
