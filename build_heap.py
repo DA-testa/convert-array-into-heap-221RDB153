@@ -42,7 +42,7 @@ def main():
             data = list(map(int, input().split()))
     assert len(data) == n
     swaps = build_heap(data)
-    #assert len(swaps) <= 4*n
+    assert len(swaps) <= 4*n
     print(len(swaps))
     for i, j in swaps:
         print(i, j)
