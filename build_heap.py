@@ -39,7 +39,7 @@ def main():
             text = file.read()
             lines = text.split('\n')
             n = int(lines[0])
-            data = list(map(int, input().split()))
+            data = list(map(int, lines[1].split()))
     assert len(data) == n
     swaps = build_heap(data)
     assert len(swaps) <= 4*n
